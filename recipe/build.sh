@@ -9,5 +9,7 @@ cd ${SRC_DIR}/ed-${PKG_VERSION}
     --disable-dependency-tracking \
     --prefix=${PREFIX}
 make CC=${CC}
+if [[ ${build_platform} == ${target_platform} ]]; then
 make check CC=${CC}
+fi
 make install CC=${CC}
